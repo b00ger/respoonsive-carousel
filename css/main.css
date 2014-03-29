@@ -2,8 +2,8 @@
    Carousel styles
    ========================================================================== */
 .respoonsive-carousel {
-  width:900px;
-  height:650px;
+  width:320px;
+  height:320px;
   overflow:hidden;
   position: relative;
   padding-bottom: 30px;
@@ -18,8 +18,8 @@
 .respoonsive-carousel ul.container li {
   padding:0px;
   margin:0px;
-  width: 900px;
-  height: 600px;
+  width: 320px;
+  height: 320px;
   text-indent: 0px;
   display: inline-block;
   list-style: none;
@@ -30,30 +30,61 @@
 }
 
 .respoonsive-carousel ul.container li img{
-	max-width: 100%;	
+	max-width: 100%;
+	position: absolute;	
 }
-
-.respoonsive-carousel-controls {
+.respoonsive-carousel ul.container li span.description{
+	max-width: 100%;
+	position: absolute;	
+}
+.respoonsive-carousel a.prev, .respoonsive-carousel a.next{
+	position: absolute;
+	padding: 1em;
+	top: 20%;
+	background: #333;
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+	-moz-opacity: 0.6;
+	-khtml-opacity: 0.6;
+	opacity: 0.6;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=60);
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=60);
+} 
+.respoonsive-carousel a.prev:hover, .respoonsive-carousel a.next:hover{
+	-moz-opacity: 1;
+	-khtml-opacity: 1;
+	opacity: 1;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha"(Opacity=100);
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+}
+.respoonsive-carousel a.prev{
+	left: 0px;
+}
+.respoonsive-carousel a.next{
+	right: 0px;
+}
+.respoonsive-carousel-status {
 	position: absolute;
 	bottom: 0em;
 	height: 30px;
 }
 
-.respoonsive-carousel-controls li{
+.respoonsive-carousel-status li{
 	display: inline;
 	float: left;
 	margin: 1em;
 		
 
 }
-.respoonsive-carousel-controls li a{
+.respoonsive-carousel-status li a{
 	padding: 1em;
 	background: #fafafa;
 	cursor: pointer;
 	border: 1px solid #eee;
 }
 
-.respoonsive-carousel-controls li a.active{
+.respoonsive-carousel-status li a.active{
 	background-color:#006;
 	color: #FFF;
 }

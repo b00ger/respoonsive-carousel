@@ -27,22 +27,13 @@
 	    	<div class="respoonsive-carousel">
 				<ul class="container">
 					<li>
-						<img src="img/img-1.jpg" />
+						<img src="img/img-1.jpg" alt="A woman"/>
 					</li>
 					<li>
-						<img src="img/img-2.jpg" />
+						<img src="img/img-2.jpg" alt="A man"/>
 					</li>
 					<li>
-						<img src="img/img-3.jpg" />
-					</li>
-					<li>
-						<img src="img/img-1.jpg" />
-					</li>
-					<li>
-						<img src="img/img-2.jpg" />
-					</li>
-					<li>
-						<img src="img/img-3.jpg" />
+						<img src="img/img-3.jpg" alt="A lacrosse ball"/>
 					</li>
 				</ul>
 				
@@ -57,7 +48,8 @@
         <script>
         	$(document).ready(function() {
         		//Define carousel container width 
-        		var carousel = new RespoonsiveCarousel({ 'mode' : 'thumbs' });
+        		//var carousel = new RespoonsiveCarousel({ 'mode' : 'thumbs' });
+        		var carousel = new RespoonsiveCarousel();
         		carousel.init();
         		
         	});
