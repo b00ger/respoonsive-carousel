@@ -1,10 +1,3 @@
-$(document).ready(function() {
-	//Define carousel container width 
-	var carousel = new RespoonsiveCarousel({ 'mode' : 'thumbs' });
-	carousel.init();
-	
-});
-
 var RespoonsiveCarousel = function(options){
 	this.options = options;		
 	this.carouselLength = $(".respoonsive-carousel ul.container > li").length;
@@ -22,7 +15,8 @@ RespoonsiveCarousel.prototype.init = function(){
 		if($('.respoonsive-carousel-controls').length == 0){
 			$('.respoonsive-carousel').append('<ul class="respoonsive-carousel-controls"></ul>');
 			for(var i=0 ; i < this.carouselLength; i++){
-				$('.respoonsive-carousel-controls').append('<li><a href="#">' + Number(i+1) + '</a></li>');
+				
+				$('.respoonsive-carousel-controls').append('<li><a href="#"' + (i==0 ? " class='active' " : "" ) +'>' + Number(i+1) + '</a></li>');
 			}
 		}
 		$('.respoonsive-carousel-controls li a').click(function(e){
