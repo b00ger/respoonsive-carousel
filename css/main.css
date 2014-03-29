@@ -36,6 +36,13 @@
 .respoonsive-carousel ul.container li span.description{
 	max-width: 100%;
 	position: absolute;	
+	bottom: 0em;
+	color: #FFF;
+	display: block;
+	width: 100%;
+	padding: 1em;
+	background-color: rgba(0, 0, 0, .8);
+	
 }
 .respoonsive-carousel a.prev, .respoonsive-carousel a.next{
 	position: absolute;
@@ -88,10 +95,14 @@
 	background-color:#006;
 	color: #FFF;
 }
+.lightbox-img {
+	max-width: 100%;	
+
+}
+
 @media (max-width: 768px) {
   .respoonsive-carousel {
     width:100%;
-    height:250px;
     overflow:hidden;
     position: relative;
   }

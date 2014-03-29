@@ -5,6 +5,7 @@ var RespoonsiveCarousel = function(options){
 	this.carouselLength = $(".respoonsive-carousel ul.container > li").length;
 	this.tileWidth = $('.respoonsive-carousel').width();
 	this.containerWidth = this.carouselLength * this.tileWidth;
+	this.lightboxModal = $('#respoonsive-lightbox');
 }
 
 RespoonsiveCarousel.prototype.init = function(){
@@ -42,8 +43,16 @@ RespoonsiveCarousel.prototype.init = function(){
 			$(".respoonsive-carousel ul.container").animate({"left" : $this.currentTile * -1 * $this.tileWidth + "px"});
 		});
 	}
+	$('a.larger').click(function() {
+		$this.lightbox($(this))
+	});
 	$(window).resize(function(){$this.resizeCarousel();})
 	
+}
+RespoonsiveCarousel.prototype.lightbox = function(clicked){
+	this.lightboxModal.find('.modal-title').html(clicked.data('title'));
+	this.lightboxModal.find('.lightbox-img').attr('src', clicked.data('src'));
+	this.lightboxModal.modal("show");
 }
 RespoonsiveCarousel.prototype.resizeCarousel = function(){
 	$(".respoonsive-carousel ul.container").css('left' , '0px');
