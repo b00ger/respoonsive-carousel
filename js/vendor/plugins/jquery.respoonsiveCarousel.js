@@ -45,18 +45,17 @@
         this._defaults = defaults;
         this._name = pluginName;
 
-        this.init();
+        this.init(this.element);
     }
 
     Plugin.prototype = {
 
-        init: function() {
-        	
-			this.carousel = $(this.options.carouselElement);
+        init: function(el) {
+			this.carousel = $(el);
 			this.lightboxModal = $(this.options.lightboxModalElement);
 			this.statusLights = $("<ul class=\"respoonsive-carousel-status\"/>");
 			this.prevNextControls = $("<a class=\"prev\">Prev</a><a class=\"next\">Next</a>");
-			this.container = this.carousel.find("ul.container");
+			this.container = this.carousel.find("ul.rc-container");
 			this.tiles = this.container.children("li");	
 			this.currentTile = 0;
 			this.carouselLength = this.tiles.length;
@@ -72,33 +71,33 @@
 			}
 				
 				
-			var $this = this;
+			var base = this;
 			this.statusLights.find('a').click(function(e){
 				e.preventDefault();
 				//this
-				$this.statusLights.find('a').removeClass('active');
+				base.statusLights.find('a').removeClass('active');
 				$(this).addClass('active');
-				$this.container.animate({"left" : $(this).parent().index() * -1 * $this.tileWidth + "px"});
+				base.container.animate({"left" : $(this).parent().index() * -1 * base.tileWidth + "px"});
 			});
 			
 			this.carousel.append(this.prevNextControls);
 			this.carousel.find('a.prev').click(function(e){
-				$this.currentTile = (($this.currentTile - 1) > 0) ? $this.currentTile - 1 : 0; 
+				base.currentTile = ((base.currentTile - 1) > 0) ? base.currentTile - 1 : 0; 
 				e.preventDefault();
-				$this.container.animate({"left" : $this.currentTile * -1 * $this.tileWidth + "px"}, function(){$this.setStatusLights()});
+				base.container.animate({"left" : base.currentTile * -1 * base.tileWidth + "px"}, function(){base.setStatusLights()});
 				
 			});
 			this.carousel.find('a.next').click(function(e){
-				$this.currentTile = (($this.currentTile + 1) < $this.carouselLength) ? $this.currentTile + 1 : 0; 
+				base.currentTile = ((base.currentTile + 1) < base.carouselLength) ? base.currentTile + 1 : 0; 
 				e.preventDefault();
-				$this.container.animate({"left" : $this.currentTile * -1 * $this.tileWidth + "px"}, function(){$this.setStatusLights()});
+				base.container.animate({"left" : base.currentTile * -1 * base.tileWidth + "px"}, function(){base.setStatusLights()});
 			});
 			
 			$('a.larger').click(function() {
-				$this.lightbox($(this))
+				base.lightbox($(this))
 			});
 			
-			$(window).resize(function(){$this.resizeCarousel($this.element, $this.options);})			
+			$(window).resize(function(){base.resizeCarousel(base.element, base.options);})			
 			
         },
 
@@ -108,20 +107,21 @@
             this.container.css('width',this.containerWidth + 'px');
             
             this.statusLights.find('a').unbind('click');
+            this.tileWidth = this.carousel.width();
             
-            var $this = this;
+            var base = this;
             this.statusLights.find('a').click(function(e){
             	e.preventDefault();
-            	$this.statusLights.find('a').removeClass('active');
+            	base.statusLights.find('a').removeClass('active');
             	$(this).addClass('active');
-            	$this.container.animate({"left" : $(this).parent().index() * -1 * $this.tileWidth + "px"});
+            	base.container.animate({"left" : $(this).parent().index() * -1 * base.tileWidth + "px"});
             });
         },
         
         setStatusLights: function() {
-            var $this = this;
+            var base = this;
             this.statusLights.find('a').removeClass('active');
-            this.statusLights.children('li:nth-child('+ Number($this.currentTile+1) +')').find('a').addClass('active');
+            this.statusLights.children('li:nth-child('+ Number(base.currentTile+1) +')').find('a').addClass('active');
         },
         
         lightbox: function(clicked) {
@@ -136,10 +136,9 @@
     $.fn[pluginName] = function ( options ) {
         return this.each(function () {
             if (!$.data(this, "plugin_" + pluginName)) {
-                $.data(this, "plugin_" + pluginName,
-                new Plugin( this, options ));
+                $.data(this, "plugin_" + pluginName, new Plugin( this, options ));
             }
         });
     };
-
+   
 })( jQuery, window, document );

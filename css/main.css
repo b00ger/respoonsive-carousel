@@ -9,13 +9,13 @@
   padding-bottom: 30px;
 
 }
-.respoonsive-carousel ul.container {
+.respoonsive-carousel ul.rc-container {
   display: inline-block;
   position: absolute;	
   padding: 0px;
   top: 0px;
 }
-.respoonsive-carousel ul.container li {
+.respoonsive-carousel ul.rc-container li {
   padding:0px;
   margin:0px;
   width: 300px;
@@ -29,11 +29,11 @@
   background: #FAFAFA;
 }
 
-.respoonsive-carousel ul.container li img{
+.respoonsive-carousel ul.rc-container li img{
 	max-width: 100%;
 	position: absolute;	
 }
-.respoonsive-carousel ul.container li span.description{
+.respoonsive-carousel ul.rc-container li span.description{
 	max-width: 100%;
 	position: absolute;	
 	bottom: 0em;
@@ -43,6 +43,9 @@
 	padding: 1em;
 	background-color: rgba(0, 0, 0, .8);
 	
+}
+.respoonsive-carousel ul.rc-container li span.description a.larger{
+	cursor: pointer;
 }
 .respoonsive-carousel a.prev, .respoonsive-carousel a.next{
 	position: absolute;
