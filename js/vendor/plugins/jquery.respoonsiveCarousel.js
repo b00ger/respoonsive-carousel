@@ -77,6 +77,7 @@
 				base.statusLights.find('a').removeClass('active');
 				$(this).addClass('active');
 				base.container.animate({"left" : $(this).parent().index() * -1 * base.tileWidth + "px"});
+				base.currentTile = $(this).parent().index();
 			});
 			
 			this.carousel.append(this.prevNextControls);
@@ -87,7 +88,7 @@
 				
 			});
 			this.carousel.find('a.next').click(function(e){
-				base.currentTile = ((base.currentTile + 1) < base.carouselLength) ? base.currentTile + 1 : 0; 
+				base.currentTile = ((base.currentTile + 1) < base.carouselLength) ? base.currentTile + 1 : base.currentTile; 
 				e.preventDefault();
 				base.container.animate({"left" : base.currentTile * -1 * base.tileWidth + "px"}, function(){base.setStatusLights()});
 			});
@@ -114,6 +115,7 @@
             	base.statusLights.find('a').removeClass('active');
             	$(this).addClass('active');
             	base.container.animate({"left" : $(this).parent().index() * -1 * base.tileWidth + "px"});
+            	base.currentTile = $(this).parent().index();
             });
         },
         

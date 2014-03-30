@@ -1,3 +1,9 @@
+.respoonsive-carousel {
+	margin-bottom: 1em;
+}
+.carousel-small {
+ 	font-size: .9em; 	
+ }
 .carousel-big {
 	height: 625px;	
 }
