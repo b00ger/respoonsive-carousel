@@ -105,7 +105,7 @@
             this.container.css('left' , '0px');
             this.tiles.css('width' , $('.respoonsive-carousel').width() + 'px');
             this.container.css('width',this.containerWidth + 'px');
-            
+            this.currentTile = 0;
             this.statusLights.find('a').unbind('click');
             this.tileWidth = this.carousel.width();
             
