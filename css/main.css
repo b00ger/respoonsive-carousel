@@ -4,3 +4,11 @@
 .carousel-big ul.rc-container li{
 	height: 625px;	
 }
+@media (max-width: 768px) {
+	.carousel-big {
+		height: 300px;	
+	}
+	.carousel-big ul.rc-container li{
+		height: 300px;	
+	}
+}

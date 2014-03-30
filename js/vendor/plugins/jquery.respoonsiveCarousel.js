@@ -27,8 +27,8 @@
     var pluginName = "respoonsiveCarousel",
         defaults = {
             propertyName: "value",
-            carouselElement : ".respoonsive-carousel",
-            lightboxModalElement : "#respoonsive-lightbox"
+            lightboxModalElement : "#respoonsive-lightbox",
+            lightboxLinkElement : ".larger"
         };
 
     // The actual plugin constructor
@@ -74,7 +74,6 @@
 			var base = this;
 			this.statusLights.find('a').click(function(e){
 				e.preventDefault();
-				//this
 				base.statusLights.find('a').removeClass('active');
 				$(this).addClass('active');
 				base.container.animate({"left" : $(this).parent().index() * -1 * base.tileWidth + "px"});
@@ -93,7 +92,7 @@
 				base.container.animate({"left" : base.currentTile * -1 * base.tileWidth + "px"}, function(){base.setStatusLights()});
 			});
 			
-			$('a.larger').click(function() {
+			$(this.options.lightboxLinkElement).click(function() {
 				base.lightbox($(this))
 			});
 			
@@ -108,7 +107,7 @@
             this.currentTile = 0;
             this.statusLights.find('a').unbind('click');
             this.tileWidth = this.carousel.width();
-            
+            this.setStatusLights();
             var base = this;
             this.statusLights.find('a').click(function(e){
             	e.preventDefault();

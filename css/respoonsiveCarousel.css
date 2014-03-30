@@ -123,6 +123,7 @@
 @media (max-width: 768px) {
   .respoonsive-carousel {
     width:100%;
+
     overflow:hidden;
     position: relative;
   }
