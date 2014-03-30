@@ -19,11 +19,57 @@
         </style>
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/respoonsiveCarousel.css">
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
     <div class="row-fluid">
-    	<div class="col-md-4 col-lg-offset-2">
+    	<div class="container-fluid">
+    		<div class="col-md-6">
+    		<div class="respoonsive-carousel">
+    			<ul class="rc-container">
+    				<li>
+    					<img src="img/img-1.jpg" alt="A woman"/>
+    					<span class="description">This is a description of this photo. A woman. <a class="larger" data-title="A Woman" data-description="This is a description of this photo. A woman." data-src="img/img-1.jpg">Larger</a></span>
+    				</li>
+    				<li>
+    					<img src="img/img-2.jpg" alt="A man"/>
+    					<span class="description">This is a description of this photo. A man. <a class="larger" data-title="A Man" data-description="This is a description of this photo. A man." data-src="img/img-2.jpg">Larger</a></span>
+    				</li>
+    				<li>
+    					<img src="img/img-3.jpg" alt="A lacrosse ball"/>
+    					<span class="description">This is a description of this photo. A ball. <a class="larger" data-title="A Ball" data-description="This is a description of this photo. A ball."  data-src="img/img-3.jpg">Larger</a></span>
+    				</li>
+    			</ul>
+    			
+    		</div>
+    		
+    		</div>
+    		<div class="col-md-6">
+    		<div class="respoonsive-carousel">
+    			<ul class="rc-container">
+    				<li>
+    					<img src="img/img-1.jpg" alt="A woman"/>
+    					<span class="description">This is a description of this photo. A woman. <a class="larger" data-title="A Woman" data-description="This is a description of this photo. A woman." data-src="img/img-1.jpg">Larger</a></span>
+    				</li>
+    				<li>
+    					<img src="img/img-2.jpg" alt="A man"/>
+    					<span class="description">This is a description of this photo. A man. <a class="larger" data-title="A Man" data-description="This is a description of this photo. A man." data-src="img/img-2.jpg">Larger</a></span>
+    				</li>
+    				<li>
+    					<img src="img/img-3.jpg" alt="A lacrosse ball"/>
+    					<span class="description">This is a description of this photo. A ball. <a class="larger" data-title="A Ball" data-description="This is a description of this photo. A ball."  data-src="img/img-3.jpg">Larger</a></span>
+    				</li>
+    			</ul>
+    			
+    		</div>
+    		
+    		</div>
+    	</div>
+    </div>
+    <div class="row-fluid">
+    	<div class="container-fluid">
+    	<div class="col-md-4">
     		<div class="respoonsive-carousel">
     			<ul class="rc-container">
     				<li>
@@ -60,7 +106,27 @@
 				</ul>
 				
 			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="respoonsive-carousel">
+				<ul class="rc-container">
+					<li>
+						<img src="img/img-1.jpg" alt="A woman"/>
+						<span class="description">This is a description of this photo. A woman. <a class="larger" data-title="A Woman" data-description="This is a description of this photo. A woman." data-src="img/img-1.jpg">Larger</a></span>
+					</li>
+					<li>
+						<img src="img/img-2.jpg" alt="A man"/>
+						<span class="description">This is a description of this photo. A man. <a class="larger" data-title="A Man" data-description="This is a description of this photo. A man." data-src="img/img-2.jpg">Larger</a></span>
+					</li>
+					<li>
+						<img src="img/img-3.jpg" alt="A lacrosse ball"/>
+						<span class="description">This is a description of this photo. A ball. <a class="larger" data-title="A Ball" data-description="This is a description of this photo. A ball."  data-src="img/img-3.jpg">Larger</a></span>
+					</li>
+				</ul>
+				
+			</div>
 		</div>	
+		</div>
 	</div>
 
 	
@@ -88,10 +154,6 @@
         <script src="js/vendor/plugins/jquery.respoonsiveCarousel.js"></script>
         <script>
         	$(document).ready(function() {
-        		//Define carousel container width 
-        		//var carousel = new RespoonsiveCarousel({ 'mode' : 'thumbs' });
-        		//var carousel = new RespoonsiveCarousel();
-        		//carousel.init();
         		$('.respoonsive-carousel').respoonsiveCarousel();
         	});
         </script>
