@@ -43,6 +43,7 @@
 			</div>
 		</div>	
 	</div>
+	
 	<div class="modal fade" id="respoonsive-lightbox">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
@@ -64,14 +65,14 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
 
         <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/vendor/plugins/jquery.respoonsiveCarousel.js"></script>
         <script>
         	$(document).ready(function() {
         		//Define carousel container width 
         		//var carousel = new RespoonsiveCarousel({ 'mode' : 'thumbs' });
-        		var carousel = new RespoonsiveCarousel();
-        		carousel.init();
-        		
+        		//var carousel = new RespoonsiveCarousel();
+        		//carousel.init();
+        		$('.respoonsive-carousel').respoonsiveCarousel();
         	});
         </script>
     </body>
